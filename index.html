@@ -19,8 +19,25 @@
         margin: 0 auto;
         border-radius: 10px;
         padding: 30px;
-        background-color: #eee;
+        background: linear-gradient(to right, #ffb6c1, #f0f8ff);
+        animation: backgroundAnimation 15s linear infinite;
       }
+
+      @keyframes backgroundAnimation {
+        0% {
+          background: linear-gradient(to right, #ffb6c1, #f0f8ff);
+        }
+        25% {
+          background: linear-gradient(to right, #f0f8ff, #476bd0);
+        }
+        25% {
+          background: linear-gradient(to right, #ff5623, #ffd82c);
+        }
+        100% {
+          background: linear-gradient(to right, #1ac75f, #f0f8ff);
+        }
+      }
+
       .time {
         font-family: "Orbitron", sans-serif;
         font-size: 4rem;
@@ -98,7 +115,7 @@
         // Asia/Macao
         let macaoElement = document.querySelector("#macao");
         if (macaoElement) {
-          let macaogDateElement = macaoElement.querySelector(".date");
+          let macaoDateElement = macaoElement.querySelector(".date");
           let macaoTimeElement = macaoElement.querySelector(".time");
           let macaoTime = moment().tz("Asia/Macao");
 
